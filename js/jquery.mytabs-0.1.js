@@ -37,10 +37,10 @@
         'tabs':function(options){
             var option=$.extend({},__DEFAULT__,options);
             var $wrap=$(this),
-                $tHead=$wrap.children(option.headPanel),
-                $tContent=$wrap.children(option.contentPanel),
+                $tHead=$(option.headPanel,this),
+                $tContent=$(option.contentPanel,this),
                 $thItem=$(option.headItem,$tHead),
-                $tcItem=$(option.contentItem,$tContent),
+                $tcItem=$(option.contentItem,$tContent);
                 _wrapWid=$wrap.width();
 
                 
@@ -64,10 +64,10 @@
         'anitabs':function(options){
             var option=$.extend({},__DEFAULT__,options);
             var $wrap=$(this),
-                $tHead=$wrap.children(option.headPanel),
-                $tContent=$wrap.children(option.contentPanel),
+                $tHead=$(option.headPanel,this),
+                $tContent=$(option.contentPanel,this),
                 $thItem=$(option.headItem,$tHead),
-                $tcItem=$(option.contentItem,$tContent),
+                $tcItem=$(option.contentItem,$tContent);
                 _wrapWid=$wrap.width();
                 _dir=option.direction;
             if($thItem.length!=$tcItem.length) return console.log($thItem.length+'!='+$tcItem.length);
