@@ -8,6 +8,7 @@ body {
     position: relative;
     font: 12px/1.5 Microsoft YaHei, tahoma, arial, Hiragino Sans GB, \\5b8b\4f53, sans-serif;
     margin: 0 auto;
+    width:1024px;
 }
 
 ul, li {
@@ -22,6 +23,9 @@ a, a:hover, a:active, a:visited {
     text-decoration: none;
 }
 
+.clearfix{
+    zoom: 1;
+}
 .clearfix:after {
     display: block;
     content: " ";
@@ -36,7 +40,7 @@ body{
 }
 .wrap {
     color: #666;
-    width: 100vw;
+    width: 100%;
     position: relative;
     height: 190px;
     padding-left: 8px;

@@ -5,8 +5,8 @@
  *                  animate方法左右切换
  *                }
  *      px
- * 结构：.wrap
- *          .tab-panel
+ * 结构：#wrap
+ *          .tab-head-panel
  *              .tab-head-item
  *                  a
  *              .tab-head-item
@@ -24,7 +24,7 @@
 (function($){
     var __DEFAULT__={                                           /*默认参数 */
                 wrap:'.wrap',
-                headPanel:'.tab-panel',                         /*标题wrap */
+                headPanel:'.tab-head-panel',                         /*标题wrap */
                 headItem:'.tab-head-item',                      /*选项卡标题 */
                 contentPanel:'.tab-content-panel',              /*内容页wrap */
                 contentItem:'.tab-content-item',                /*选项卡内容 */
@@ -37,11 +37,13 @@
         'tabs':function(options){
             var option=$.extend({},__DEFAULT__,options);
             var $wrap=$(this),
-                $tHead=$(option.headPanel,this),
-                $tContent=$(option.contentPanel,this),
+                $tHead=$wrap.children(option.headPanel),
+                $tContent=$wrap.children(option.contentPanel),
                 $thItem=$(option.headItem,$tHead),
-                $tcItem=$(option.contentItem,$tContent);
+                $tcItem=$(option.contentItem,$tContent),
                 _wrapWid=$wrap.width();
+
+                
             if(!$thItem==$tcItem) return console.log('!=');
             $tcItem.width(_wrapWid);
             $thItem.eq(0).addClass('clicked')
@@ -62,10 +64,10 @@
         'anitabs':function(options){
             var option=$.extend({},__DEFAULT__,options);
             var $wrap=$(this),
-                $tHead=$(option.headPanel,this),
-                $tContent=$(option.contentPanel,this),
+                $tHead=$wrap.children(option.headPanel),
+                $tContent=$wrap.children(option.contentPanel),
                 $thItem=$(option.headItem,$tHead),
-                $tcItem=$(option.contentItem,$tContent);
+                $tcItem=$(option.contentItem,$tContent),
                 _wrapWid=$wrap.width();
                 _dir=option.direction;
             if($thItem.length!=$tcItem.length) return console.log($thItem.length+'!='+$tcItem.length);
